@@ -1,7 +1,7 @@
 ## WordPress+Nginx+PHP-FPM+MariaDB Deployment
 
-- Requires Ansible 1.2 or newer
-- Expects CentOS/RHEL 7.x host/s
+- Requires Ansible 2.1.1 or newer
+- Expects CentOS 7/RHEL 7.x host/s
 
 RHEL7 version reflects changes in Red Hat Enterprise Linux and CentOS 7:
 1. Network device naming scheme has changed
