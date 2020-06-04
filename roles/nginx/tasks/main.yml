@@ -3,8 +3,10 @@
   yum: name=nginx state=present
 
 - name: Copy nginx configuration for wordpress
+  become: yes
   template: src=default.conf dest=/etc/nginx/conf.d/default.conf
   notify: restart nginx
+  ignore_errors: yes
 
 - name: insert firewalld rule for nginx
   firewalld: port={{ nginx_port }}/tcp permanent=true state=enabled immediate=yes
@@ -12,3 +14,4 @@
 
 - name: http service state
   service: name=nginx state=started enabled=yes
+  ignore_errors: yes
